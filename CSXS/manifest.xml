@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ExtensionBundleVersion / Extension Version = CEP 包版本(安装/升级识别用)，与面板版本
+     (V0.x，见 index.html 的 .ver 与 main.js 的 JS_BUILD)无关，因此不随面板升号，保持 1.0.0。 -->
+<ExtensionManifest Version="8.0"
+    ExtensionBundleId="com.workbuddy.ai.zidongzhiban"
+    ExtensionBundleVersion="1.0.0"
+    ExtensionBundleName="AI自动制版面板"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtensionList>
+    <Extension Id="com.workbuddy.ai.zidongzhiban.panel" Version="1.0.0"/>
+  </ExtensionList>
+  <ExecutionEnvironment>
+    <HostList>
+      <Host Name="ILST" Version="[17.0,99.9]"/>
+    </HostList>
+    <LocaleList>
+      <Locale Code="All"/>
+    </LocaleList>
+    <RequiredRuntimeList>
+      <RequiredRuntime Name="CSXS" Version="9.0"/>
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
+  <DispatchInfoList>
+    <Extension Id="com.workbuddy.ai.zidongzhiban.panel">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./index.html</MainPath>
+          <ScriptPath>./jsx/zhiban.jsx</ScriptPath>
+          <CEFCommandLine/>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Panel</Type>
+          <Menu>自动制版</Menu>
+          <Geometry>
+            <Size>
+              <Width>430</Width>
+              <Height>900</Height>
+            </Size>
+            <MinSize>
+              <Width>300</Width>
+              <Height>220</Height>
+            </MinSize>
+            <MaxSize>
+              <Width>600</Width>
+              <Height>1600</Height>
+            </MaxSize>
+          </Geometry>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+</ExtensionManifest>

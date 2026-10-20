@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <title>自动制版</title>
+  <link rel="stylesheet" href="./css/style.css?v=20261009h"/>
+</head>
+<body>
+  <header class="topbar">
+    <span class="title">自动制版</span>
+    <span class="ver">V0.8</span>
+    <span class="top-actions">
+      <button id="btnRun" class="btn" disabled>开始制版</button>
+    </span>
+  </header>
+
+  <div class="body">
+    <!-- 预检：当前文档状态（只读，不改文档） -->
+    <div id="doc" class="card"></div>
+
+    <!-- 制版参数 -->
+    <div class="card">
+      <div class="card-head"><span class="card-title">制版参数</span><span class="chips"><span class="chip off" id="paramChip">待预检</span></span></div>
+      <div class="card-body">
+        <div class="row">
+          <span class="row-t">产品类型<span class="dim">（决定出血值）</span></span>
+          <span class="seg" id="segType">
+            <button class="seg-btn active" data-type="标签">标签 · 3mm</button>
+            <button class="seg-btn" data-type="礼盒">礼盒 · 5mm</button>
+          </span>
+        </div>
+        <div id="specWrap" class="row hidden">
+          <span class="row-t">主刀线<span class="dim">（多条同色刀线，按面积大到小）</span></span>
+          <select id="specSel" class="sel"></select>
+        </div>
+        <div id="specNote" class="dim"></div>
+      </div>
+    </div>
+
+    <div id="notice" class="notice hidden"></div>
+    <div id="error" class="error hidden"></div>
+    <div id="loading" class="loading hidden">处理中…</div>
+
+    <div id="results" class="results"></div>
+  </div>
+
+  <footer class="foot" id="foot"></footer>
+
+  <!-- 自定义确认框（深色，替代原生 confirm） -->
+  <div id="modalMask" class="modal-mask hidden">
+    <div class="modal">
+      <div class="modal-title" id="modalTitle">提示</div>
+      <div class="modal-msg" id="modalMsg"></div>
+      <div class="modal-btns">
+        <button class="modal-btn modal-cancel" id="modalCancel">取消</button>
+        <button class="modal-btn modal-ok" id="modalOk">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/main.js?v=20261009h"></script>
+</body>
+</html>
